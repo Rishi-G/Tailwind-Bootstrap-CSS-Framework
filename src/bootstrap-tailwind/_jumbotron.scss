@@ -1,0 +1,13 @@
+// Jumbotron - Bootstrap 4 to Tailwind CSS
+
+.jumbotron {
+  @apply px-8 py-16 mb-8 bg-gray-100 rounded-lg;
+  
+  .jumbotron-heading {
+    @apply font-light;
+  }
+}
+
+.jumbotron-fluid {
+  @apply px-0 rounded-none;
+}

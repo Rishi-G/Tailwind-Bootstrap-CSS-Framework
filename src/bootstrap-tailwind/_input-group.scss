@@ -1,0 +1,81 @@
+// Input Groups - Bootstrap 4 to Tailwind CSS
+
+.input-group {
+  @apply relative flex items-stretch w-full;
+  
+  > .form-control,
+  > .form-control-plaintext,
+  > .custom-select,
+  > .custom-file {
+    @apply relative flex-1 min-w-0;
+    
+    &:focus {
+      @apply z-10;
+    }
+    
+    &:not(:last-child) {
+      @apply rounded-r-none;
+    }
+    
+    &:not(:first-child) {
+      @apply rounded-l-none;
+    }
+  }
+}
+
+.input-group-prepend,
+.input-group-append {
+  @apply flex;
+  
+  .btn {
+    @apply relative z-20;
+    
+    &:focus {
+      @apply z-30;
+    }
+  }
+  
+  .btn + .btn,
+  .btn + .input-group-text,
+  .input-group-text + .input-group-text,
+  .input-group-text + .btn {
+    @apply -ml-px;
+  }
+}
+
+.input-group-prepend {
+  @apply mr-px;
+}
+
+.input-group-append {
+  @apply ml-px;
+}
+
+.input-group-text {
+  @apply flex items-center px-3 py-2 mb-0 text-sm font-normal text-gray-700 text-center whitespace-nowrap bg-gray-100 border border-gray-300 rounded;
+}
+
+// Input group sizes
+.input-group-sm > .form-control:not(textarea),
+.input-group-sm > .custom-select {
+  @apply px-2 py-1 text-sm rounded-sm;
+}
+
+.input-group-sm > .input-group-prepend > .input-group-text,
+.input-group-sm > .input-group-append > .input-group-text,
+.input-group-sm > .input-group-prepend > .btn,
+.input-group-sm > .input-group-append > .btn {
+  @apply px-2 py-1 text-sm rounded-sm;
+}
+
+.input-group-lg > .form-control:not(textarea),
+.input-group-lg > .custom-select {
+  @apply px-4 py-3 text-lg rounded-lg;
+}
+
+.input-group-lg > .input-group-prepend > .input-group-text,
+.input-group-lg > .input-group-append > .input-group-text,
+.input-group-lg > .input-group-prepend > .btn,
+.input-group-lg > .input-group-append > .btn {
+  @apply px-4 py-3 text-lg rounded-lg;
+}

@@ -1,0 +1,149 @@
+// Dropdown - Bootstrap 4 to Tailwind CSS
+
+.dropdown,
+.dropleft,
+.dropright,
+.dropup {
+  @apply relative;
+}
+
+.dropdown-toggle {
+  white-space: nowrap;
+  
+  &::after {
+    @apply inline-block ml-1 align-middle border-t border-r-0 border-b-0 border-l-0;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+  }
+  
+  &:empty::after {
+    @apply ml-0;
+  }
+}
+
+.dropdown-menu {
+  @apply absolute top-full left-0 z-50 hidden float-left min-w-40 px-0 py-2 mt-1 text-left list-none bg-white border border-gray-300 rounded shadow-lg;
+  
+  &.show {
+    @apply block;
+  }
+  
+  .dropdown-item {
+    @apply block w-full px-6 py-1 clear-both font-normal text-gray-900 whitespace-nowrap bg-transparent border-0;
+    
+    &:hover,
+    &:focus {
+      @apply text-gray-900 no-underline bg-gray-100;
+    }
+    
+    &.active,
+    &:active {
+      @apply text-white no-underline bg-blue-600;
+    }
+    
+    &.disabled,
+    &:disabled {
+      @apply text-gray-600 pointer-events-none bg-transparent;
+    }
+  }
+}
+
+.dropdown-menu-right {
+  @apply right-0 left-auto;
+}
+
+.dropdown-menu-left {
+  @apply right-auto left-0;
+}
+
+// Dropdown headers
+.dropdown-header {
+  @apply block px-6 py-1 mb-0 text-sm font-medium text-gray-600 whitespace-nowrap;
+}
+
+.dropdown-item-text {
+  @apply block px-6 py-1 text-gray-900;
+}
+
+// Dropdown divider
+.dropdown-divider {
+  @apply h-0 my-2 overflow-hidden border-t border-gray-300;
+}
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+.dropup {
+  .dropdown-menu {
+    @apply top-auto bottom-full mb-1;
+  }
+  
+  .dropdown-toggle::after {
+    @apply inline-block ml-1 align-middle;
+    content: "";
+    border-top: 0;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0.3em solid;
+    border-left: 0.3em solid transparent;
+  }
+  
+  .dropdown-toggle:empty::after {
+    @apply ml-0;
+  }
+}
+
+.dropright {
+  .dropdown-menu {
+    @apply top-0 right-auto bottom-auto left-full ml-1;
+  }
+  
+  .dropdown-toggle::after {
+    @apply inline-block ml-1 align-middle;
+    content: "";
+    border-top: 0.3em solid transparent;
+    border-right: 0;
+    border-bottom: 0.3em solid transparent;
+    border-left: 0.3em solid;
+  }
+  
+  .dropdown-toggle:empty::after {
+    @apply ml-0;
+  }
+  
+  .dropdown-toggle::after {
+    @apply align-middle;
+  }
+}
+
+.dropleft {
+  .dropdown-menu {
+    @apply top-0 right-full bottom-auto left-auto mr-1;
+  }
+  
+  .dropdown-toggle::after {
+    @apply inline-block ml-1 align-middle;
+    content: "";
+  }
+  
+  .dropdown-toggle::before {
+    @apply inline-block mr-1 align-middle;
+    content: "";
+    border-top: 0.3em solid transparent;
+    border-right: 0.3em solid;
+    border-bottom: 0.3em solid transparent;
+  }
+  
+  .dropdown-toggle:empty::after {
+    @apply ml-0;
+  }
+}
+
+// Dropdown sizing
+.dropdown-menu-sm {
+  @apply min-w-32;
+}
+
+.dropdown-menu-lg {
+  @apply min-w-80;
+}

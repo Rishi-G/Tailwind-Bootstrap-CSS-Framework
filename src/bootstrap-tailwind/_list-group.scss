@@ -1,0 +1,240 @@
+// List Group - Bootstrap 4 to Tailwind CSS
+
+.list-group {
+  @apply flex flex-col pl-0 mb-0 rounded;
+}
+
+.list-group-item-action {
+  @apply w-full text-gray-700 text-left;
+  
+  &:hover,
+  &:focus {
+    @apply z-10 text-gray-700 no-underline bg-gray-50;
+  }
+  
+  &:active {
+    @apply text-gray-900 bg-gray-100;
+  }
+}
+
+.list-group-item {
+  @apply relative block px-5 py-3 bg-white border border-gray-300;
+  
+  &:first-child {
+    @apply rounded-t;
+  }
+  
+  &:last-child {
+    @apply rounded-b;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply text-gray-500 pointer-events-none bg-white;
+  }
+  
+  &.active {
+    @apply z-10 text-white bg-blue-600 border-blue-600;
+  }
+  
+  & + .list-group-item {
+    @apply border-t-0;
+    
+    &.active {
+      @apply mt-px border-t;
+    }
+  }
+}
+
+// Horizontal list groups
+.list-group-horizontal {
+  @apply flex-row;
+  
+  > .list-group-item {
+    &:first-child {
+      @apply rounded-l rounded-tr-none;
+    }
+    
+    &:last-child {
+      @apply rounded-r rounded-bl-none;
+    }
+    
+    &.active {
+      @apply mt-0;
+    }
+    
+    + .list-group-item {
+      @apply border-t border-l-0;
+      
+      &.active {
+        @apply ml-px border-l;
+      }
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    
+    .list-group-horizontal#{$infix} {
+      @apply flex-row;
+      
+      > .list-group-item {
+        &:first-child {
+          @apply rounded-l rounded-tr-none;
+        }
+        
+        &:last-child {
+          @apply rounded-r rounded-bl-none;
+        }
+        
+        &.active {
+          @apply mt-0;
+        }
+        
+        + .list-group-item {
+          @apply border-t border-l-0;
+          
+          &.active {
+            @apply ml-px border-l;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Flush list items
+.list-group-flush {
+  @apply rounded-none;
+  
+  > .list-group-item {
+    @apply border-r-0 border-l-0 rounded-none;
+    
+    &:first-child {
+      @apply border-t-0;
+    }
+  }
+}
+
+// Contextual variants
+.list-group-item-primary {
+  @apply text-blue-800 bg-blue-100;
+  
+  &.list-group-item-action {
+    &:hover,
+    &:focus {
+      @apply text-blue-800 bg-blue-200;
+    }
+    
+    &.active {
+      @apply text-white bg-blue-800 border-blue-800;
+    }
+  }
+}
+
+.list-group-item-secondary {
+  @apply text-gray-800 bg-gray-100;
+  
+  &.list-group-item-action {
+    &:hover,
+    &:focus {
+      @apply text-gray-800 bg-gray-200;
+    }
+    
+    &.active {
+      @apply text-white bg-gray-800 border-gray-800;
+    }
+  }
+}
+
+.list-group-item-success {
+  @apply text-green-800 bg-green-100;
+  
+  &.list-group-item-action {
+    &:hover,
+    &:focus {
+      @apply text-green-800 bg-green-200;
+    }
+    
+    &.active {
+      @apply text-white bg-green-800 border-green-800;
+    }
+  }
+}
+
+.list-group-item-info {
+  @apply text-cyan-800 bg-cyan-100;
+  
+  &.list-group-item-action {
+    &:hover,
+    &:focus {
+      @apply text-cyan-800 bg-cyan-200;
+    }
+    
+    &.active {
+      @apply text-white bg-cyan-800 border-cyan-800;
+    }
+  }
+}
+
+.list-group-item-warning {
+  @apply text-yellow-800 bg-yellow-100;
+  
+  &.list-group-item-action {
+    &:hover,
+    &:focus {
+      @apply text-yellow-800 bg-yellow-200;
+    }
+    
+    &.active {
+      @apply text-white bg-yellow-800 border-yellow-800;
+    }
+  }
+}
+
+.list-group-item-danger {
+  @apply text-red-800 bg-red-100;
+  
+  &.list-group-item-action {
+    &:hover,
+    &:focus {
+      @apply text-red-800 bg-red-200;
+    }
+    
+    &.active {
+      @apply text-white bg-red-800 border-red-800;
+    }
+  }
+}
+
+.list-group-item-light {
+  @apply text-gray-800 bg-gray-50;
+  
+  &.list-group-item-action {
+    &:hover,
+    &:focus {
+      @apply text-gray-800 bg-gray-100;
+    }
+    
+    &.active {
+      @apply text-white bg-gray-800 border-gray-800;
+    }
+  }
+}
+
+.list-group-item-dark {
+  @apply text-gray-200 bg-gray-800;
+  
+  &.list-group-item-action {
+    &:hover,
+    &:focus {
+      @apply text-gray-200 bg-gray-700;
+    }
+    
+    &.active {
+      @apply text-white bg-gray-200 border-gray-200;
+    }
+  }
+}

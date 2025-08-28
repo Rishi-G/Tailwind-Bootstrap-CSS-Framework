@@ -1,0 +1,31 @@
+// Bootstrap 4 to Tailwind CSS Framework
+// Main entry point for the compatibility framework
+
+// Configuration
+@import 'variables';
+@import 'mixins';
+
+// Layout & components
+@import 'reboot';
+@import 'grid';
+@import 'utilities';
+
+// Components
+@import 'buttons';
+@import 'alerts';
+@import 'badges';
+@import 'breadcrumb';
+@import 'cards';
+@import 'forms';
+@import 'input-group';
+@import 'nav';
+@import 'navbar';
+@import 'pagination';
+@import 'progress';
+@import 'tables';
+@import 'typography';
+@import 'modals';
+@import 'dropdown';
+@import 'list-group';
+@import 'media';
+@import 'jumbotron';

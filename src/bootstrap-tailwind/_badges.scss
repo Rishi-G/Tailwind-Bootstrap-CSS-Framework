@@ -1,0 +1,104 @@
+// Badges - Bootstrap 4 to Tailwind CSS
+
+.badge {
+  @apply inline-block px-1 py-1 text-xs font-bold leading-none text-center whitespace-nowrap align-baseline rounded;
+  
+  // Empty badges collapse
+  &:empty {
+    @apply hidden;
+  }
+}
+
+// Badge variants
+.badge-primary {
+  @apply text-white bg-blue-600;
+  
+  &[href] {
+    &:hover,
+    &:focus {
+      @apply text-white bg-blue-700 no-underline;
+    }
+  }
+}
+
+.badge-secondary {
+  @apply text-white bg-gray-600;
+  
+  &[href] {
+    &:hover,
+    &:focus {
+      @apply text-white bg-gray-700 no-underline;
+    }
+  }
+}
+
+.badge-success {
+  @apply text-white bg-green-600;
+  
+  &[href] {
+    &:hover,
+    &:focus {
+      @apply text-white bg-green-700 no-underline;
+    }
+  }
+}
+
+.badge-info {
+  @apply text-white bg-cyan-600;
+  
+  &[href] {
+    &:hover,
+    &:focus {
+      @apply text-white bg-cyan-700 no-underline;
+    }
+  }
+}
+
+.badge-warning {
+  @apply text-gray-900 bg-yellow-500;
+  
+  &[href] {
+    &:hover,
+    &:focus {
+      @apply text-gray-900 bg-yellow-600 no-underline;
+    }
+  }
+}
+
+.badge-danger {
+  @apply text-white bg-red-600;
+  
+  &[href] {
+    &:hover,
+    &:focus {
+      @apply text-white bg-red-700 no-underline;
+    }
+  }
+}
+
+.badge-light {
+  @apply text-gray-900 bg-gray-100;
+  
+  &[href] {
+    &:hover,
+    &:focus {
+      @apply text-gray-900 bg-gray-200 no-underline;
+    }
+  }
+}
+
+.badge-dark {
+  @apply text-white bg-gray-800;
+  
+  &[href] {
+    &:hover,
+    &:focus {
+      @apply text-white bg-gray-900 no-underline;
+    }
+  }
+}
+
+// Pill badges
+.badge-pill {
+  @apply px-2 rounded-full;
+}

@@ -1,0 +1,479 @@
+// Forms - Bootstrap 4 to Tailwind CSS
+
+// Form groups
+.form-group {
+  @apply mb-4;
+}
+
+.form-text {
+  @apply block mt-1 text-sm text-gray-600;
+}
+
+// Form controls
+.form-control {
+  @apply block w-full px-3 py-2 text-base leading-normal text-gray-900 bg-white border border-gray-300 rounded;
+  @apply transition duration-150 ease-in-out;
+  
+  &:focus {
+    @apply outline-none bg-white border-blue-500;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  &::placeholder {
+    @apply text-gray-500;
+  }
+  
+  &:disabled,
+  &[readonly] {
+    @apply bg-gray-100 opacity-100;
+  }
+}
+
+.form-control-plaintext {
+  @apply block w-full px-3 py-2 mb-0 text-base leading-normal text-gray-900 bg-transparent border-transparent;
+  
+  &:focus,
+  &:read-only {
+    @apply bg-transparent border-transparent shadow-none;
+  }
+}
+
+// Form control sizing
+.form-control-sm {
+  @apply px-2 py-1 text-sm rounded-sm;
+}
+
+.form-control-lg {
+  @apply px-4 py-3 text-lg rounded-lg;
+}
+
+// Select
+select.form-control {
+  &:focus::-ms-value {
+    color: #495057;
+    background-color: #fff;
+  }
+}
+
+// File input
+.form-control-file {
+  @apply block w-full;
+}
+
+.form-control-range {
+  @apply block w-full;
+}
+
+// Form labels
+.col-form-label {
+  @apply pt-2 pb-2 mb-0 text-sm leading-normal;
+}
+
+.col-form-label-lg {
+  @apply pt-3 pb-3 text-lg;
+}
+
+.col-form-label-sm {
+  @apply pt-1 pb-1 text-sm;
+}
+
+// Form row
+.form-row {
+  @apply flex flex-wrap -mx-2;
+  
+  > .col,
+  > [class*="col-"] {
+    @apply px-2;
+  }
+}
+
+// Form check (checkboxes and radios)
+.form-check {
+  @apply relative block pl-6 mb-3;
+}
+
+.form-check-input {
+  @apply absolute mt-1 ml-6;
+  margin-left: -1.25rem;
+}
+
+.form-check-label {
+  @apply mb-0;
+}
+
+.form-check-inline {
+  @apply inline-flex items-center pl-0 mr-6;
+  
+  .form-check-input {
+    @apply static mt-0 mr-2 ml-0;
+  }
+}
+
+// Disabled state
+.form-check-input {
+  &:disabled ~ .form-check-label {
+    @apply text-gray-500;
+  }
+}
+
+// Validation states
+.was-validated {
+  .form-control {
+    &:valid {
+      @apply border-green-500;
+      
+      &:focus {
+        @apply border-green-500;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+      }
+    }
+    
+    &:invalid {
+      @apply border-red-500;
+      
+      &:focus {
+        @apply border-red-500;
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+      }
+    }
+  }
+  
+  .form-check-input {
+    &:valid ~ .form-check-label {
+      @apply text-green-600;
+    }
+    
+    &:invalid ~ .form-check-label {
+      @apply text-red-600;
+    }
+  }
+}
+
+.valid-feedback {
+  @apply block w-full mt-1 text-sm text-green-600;
+}
+
+.valid-tooltip {
+  @apply absolute top-full z-10 block w-full px-2 py-1 mt-1 text-xs text-white bg-green-600 rounded;
+}
+
+.invalid-feedback {
+  @apply block w-full mt-1 text-sm text-red-600;
+}
+
+.invalid-tooltip {
+  @apply absolute top-full z-10 block w-full px-2 py-1 mt-1 text-xs text-white bg-red-600 rounded;
+}
+
+// Form validation classes
+.is-valid {
+  @apply border-green-500;
+  
+  &:focus {
+    @apply border-green-500;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+  }
+  
+  ~ .valid-feedback,
+  ~ .valid-tooltip {
+    display: block;
+  }
+}
+
+.is-invalid {
+  @apply border-red-500;
+  
+  &:focus {
+    @apply border-red-500;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+  }
+  
+  ~ .invalid-feedback,
+  ~ .invalid-tooltip {
+    display: block;
+  }
+}
+
+// Input groups
+.input-group {
+  @apply relative flex items-stretch w-full;
+  
+  > .form-control,
+  > .form-control-plaintext,
+  > .custom-select,
+  > .custom-file {
+    @apply relative flex-1 min-w-0;
+    
+    &:focus {
+      @apply z-10;
+    }
+    
+    &:not(:last-child) {
+      @apply rounded-r-none;
+    }
+    
+    &:not(:first-child) {
+      @apply rounded-l-none;
+    }
+  }
+}
+
+.input-group-prepend,
+.input-group-append {
+  @apply flex;
+  
+  .btn {
+    @apply relative z-20;
+    
+    &:focus {
+      @apply z-30;
+    }
+  }
+  
+  .btn + .btn,
+  .btn + .input-group-text,
+  .input-group-text + .input-group-text,
+  .input-group-text + .btn {
+    @apply -ml-px;
+  }
+}
+
+.input-group-prepend {
+  @apply mr-px;
+}
+
+.input-group-append {
+  @apply ml-px;
+}
+
+.input-group-text {
+  @apply flex items-center px-3 py-2 mb-0 text-sm font-normal text-gray-700 text-center whitespace-nowrap bg-gray-100 border border-gray-300 rounded;
+}
+
+// Input group sizes
+.input-group-sm > .form-control:not(textarea),
+.input-group-sm > .custom-select {
+  @apply px-2 py-1 text-sm rounded-sm;
+}
+
+.input-group-sm > .input-group-prepend > .input-group-text,
+.input-group-sm > .input-group-append > .input-group-text,
+.input-group-sm > .input-group-prepend > .btn,
+.input-group-sm > .input-group-append > .btn {
+  @apply px-2 py-1 text-sm rounded-sm;
+}
+
+.input-group-lg > .form-control:not(textarea),
+.input-group-lg > .custom-select {
+  @apply px-4 py-3 text-lg rounded-lg;
+}
+
+.input-group-lg > .input-group-prepend > .input-group-text,
+.input-group-lg > .input-group-append > .input-group-text,
+.input-group-lg > .input-group-prepend > .btn,
+.input-group-lg > .input-group-append > .btn {
+  @apply px-4 py-3 text-lg rounded-lg;
+}
+
+// Custom forms
+.custom-control {
+  @apply relative block min-h-6 pl-6;
+}
+
+.custom-control-inline {
+  @apply inline-flex mr-6;
+}
+
+.custom-control-input {
+  @apply absolute left-0 z-10 w-4 h-4 opacity-0;
+}
+
+.custom-control-label {
+  @apply relative mb-0 align-top;
+  
+  &::before {
+    @apply absolute -left-6 block w-4 h-4 pointer-events-none bg-white border border-gray-400 rounded-sm;
+    content: "";
+    top: 0.25rem;
+  }
+  
+  &::after {
+    @apply absolute -left-6 block w-4 h-4 bg-center bg-no-repeat bg-contain;
+    content: "";
+    top: 0.25rem;
+  }
+}
+
+.custom-checkbox .custom-control-label::before {
+  @apply rounded-sm;
+}
+
+.custom-radio .custom-control-label::before {
+  @apply rounded-full;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  @apply bg-blue-600 border-blue-600;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  @apply border-blue-400;
+}
+
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+  @apply bg-blue-200 border-blue-200;
+}
+
+.custom-control-input:disabled ~ .custom-control-label {
+  @apply text-gray-500;
+  
+  &::before {
+    @apply bg-gray-100;
+  }
+}
+
+// Custom file
+.custom-file {
+  @apply relative inline-block w-full h-10 mb-0;
+}
+
+.custom-file-input {
+  @apply relative z-20 w-full h-10 m-0 opacity-0;
+}
+
+.custom-file-label {
+  @apply absolute top-0 right-0 left-0 z-10 h-10 px-3 py-2 font-normal leading-normal text-gray-700 bg-white border border-gray-300 rounded;
+  
+  &::after {
+    @apply absolute top-0 right-0 bottom-0 z-30 block px-3 py-2 text-gray-700 bg-gray-100 border-l border-gray-300 rounded-r;
+    content: "Browse";
+  }
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+  @apply border-blue-500;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.custom-file-input:disabled ~ .custom-file-label {
+  @apply bg-gray-100;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "Browse";
+}
+
+// Custom range
+.custom-range {
+  @apply w-full h-6 p-0 bg-transparent appearance-none;
+  
+  &:focus {
+    @apply outline-none;
+    
+    &::-webkit-slider-thumb {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    
+    &::-moz-range-thumb {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    
+    &::-ms-thumb {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+  
+  &::-webkit-slider-track {
+    @apply w-full h-2 bg-gray-300 rounded-full;
+    cursor: pointer;
+  }
+  
+  &::-webkit-slider-thumb {
+    @apply w-4 h-4 bg-blue-600 border-0 rounded-full appearance-none;
+    cursor: pointer;
+    margin-top: -0.25rem;
+  }
+  
+  &::-moz-range-track {
+    @apply w-full h-2 bg-gray-300 border-0 rounded-full;
+    cursor: pointer;
+  }
+  
+  &::-moz-range-thumb {
+    @apply w-4 h-4 bg-blue-600 border-0 rounded-full;
+    cursor: pointer;
+  }
+  
+  &::-ms-track {
+    @apply w-full h-2 bg-transparent border-0;
+    cursor: pointer;
+    color: transparent;
+  }
+  
+  &::-ms-fill-lower {
+    @apply bg-gray-300 rounded-full;
+  }
+  
+  &::-ms-fill-upper {
+    @apply bg-gray-300 rounded-full;
+  }
+  
+  &::-ms-thumb {
+    @apply w-4 h-4 bg-blue-600 border-0 rounded-full;
+    cursor: pointer;
+    margin-top: 0;
+  }
+  
+  &:disabled {
+    &::-webkit-slider-thumb {
+      @apply bg-gray-400;
+    }
+    
+    &::-webkit-slider-track {
+      @apply cursor-default;
+    }
+    
+    &::-moz-range-thumb {
+      @apply bg-gray-400;
+    }
+    
+    &::-moz-range-track {
+      @apply cursor-default;
+    }
+    
+    &::-ms-thumb {
+      @apply bg-gray-400;
+    }
+  }
+}
+
+// Custom select
+.custom-select {
+  @apply inline-block w-full px-3 py-2 pr-8 text-base leading-normal text-gray-900 bg-white border border-gray-300 rounded appearance-none;
+  @apply transition duration-150 ease-in-out;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5rem 1.5rem;
+  
+  &:focus {
+    @apply outline-none bg-white border-blue-500;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  &:disabled {
+    @apply text-gray-500 bg-gray-100;
+  }
+}
+
+.custom-select-sm {
+  @apply px-2 py-1 text-sm;
+}
+
+.custom-select-lg {
+  @apply px-4 py-3 text-lg;
+}

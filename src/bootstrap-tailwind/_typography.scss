@@ -1,0 +1,74 @@
+// Typography - Bootstrap 4 to Tailwind CSS
+
+// Headings
+h1, .h1 { @apply mb-2 font-medium leading-tight text-4xl; }
+h2, .h2 { @apply mb-2 font-medium leading-tight text-3xl; }
+h3, .h3 { @apply mb-2 font-medium leading-tight text-2xl; }
+h4, .h4 { @apply mb-2 font-medium leading-tight text-xl; }
+h5, .h5 { @apply mb-2 font-medium leading-tight text-lg; }
+h6, .h6 { @apply mb-2 font-medium leading-tight text-base; }
+
+// Lead paragraph
+.lead {
+  @apply text-lg font-light;
+}
+
+// Emphasis
+.small { @apply text-sm; }
+
+mark,
+.mark {
+  @apply px-1 bg-yellow-200;
+}
+
+// Lists
+.list-unstyled {
+  @apply pl-0 list-none;
+}
+
+.list-inline {
+  @apply pl-0 list-none;
+}
+
+.list-inline-item {
+  @apply inline-block;
+  
+  &:not(:last-child) {
+    @apply mr-2;
+  }
+}
+
+// Misc
+.initialism {
+  @apply text-sm uppercase;
+}
+
+// Blockquotes
+.blockquote {
+  @apply mb-4 text-lg;
+}
+
+.blockquote-footer {
+  @apply block text-sm text-gray-600;
+  
+  &::before {
+    content: "\2014\00A0";
+  }
+}
+
+// Display headings
+.display-1 {
+  @apply text-6xl font-light leading-tight;
+}
+
+.display-2 {
+  @apply text-5xl font-light leading-tight;
+}
+
+.display-3 {
+  @apply text-4xl font-light leading-tight;
+}
+
+.display-4 {
+  @apply text-3xl font-light leading-tight;
+}

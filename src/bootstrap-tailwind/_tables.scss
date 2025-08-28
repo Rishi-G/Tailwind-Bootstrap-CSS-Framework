@@ -1,0 +1,260 @@
+// Tables - Bootstrap 4 to Tailwind CSS
+
+.table {
+  @apply w-full mb-4 text-gray-900;
+  
+  th,
+  td {
+    @apply px-3 py-3 align-top border-b border-gray-300;
+  }
+  
+  thead th {
+    @apply align-bottom border-b-2 border-gray-300;
+  }
+  
+  tbody + tbody {
+    @apply border-t-2 border-gray-300;
+  }
+}
+
+// Condensed table w/ half padding
+.table-sm {
+  th,
+  td {
+    @apply px-2 py-1;
+  }
+}
+
+// Border versions
+.table-bordered {
+  @apply border border-gray-300;
+  
+  th,
+  td {
+    @apply border border-gray-300;
+  }
+  
+  thead {
+    th,
+    td {
+      @apply border-b-2;
+    }
+  }
+}
+
+.table-borderless {
+  th,
+  td,
+  thead th,
+  tbody + tbody {
+    @apply border-0;
+  }
+}
+
+// Zebra striping
+.table-striped {
+  tbody tr:nth-of-type(odd) {
+    @apply bg-gray-50;
+  }
+}
+
+// Hoverable table rows
+.table-hover {
+  tbody tr {
+    &:hover {
+      @apply bg-gray-50;
+    }
+  }
+}
+
+// Table backgrounds
+.table-primary,
+.table-primary > th,
+.table-primary > td {
+  @apply bg-blue-100;
+}
+
+.table-hover .table-primary:hover {
+  @apply bg-blue-200;
+  
+  > td,
+  > th {
+    @apply bg-blue-200;
+  }
+}
+
+.table-secondary,
+.table-secondary > th,
+.table-secondary > td {
+  @apply bg-gray-200;
+}
+
+.table-hover .table-secondary:hover {
+  @apply bg-gray-300;
+  
+  > td,
+  > th {
+    @apply bg-gray-300;
+  }
+}
+
+.table-success,
+.table-success > th,
+.table-success > td {
+  @apply bg-green-100;
+}
+
+.table-hover .table-success:hover {
+  @apply bg-green-200;
+  
+  > td,
+  > th {
+    @apply bg-green-200;
+  }
+}
+
+.table-info,
+.table-info > th,
+.table-info > td {
+  @apply bg-cyan-100;
+}
+
+.table-hover .table-info:hover {
+  @apply bg-cyan-200;
+  
+  > td,
+  > th {
+    @apply bg-cyan-200;
+  }
+}
+
+.table-warning,
+.table-warning > th,
+.table-warning > td {
+  @apply bg-yellow-100;
+}
+
+.table-hover .table-warning:hover {
+  @apply bg-yellow-200;
+  
+  > td,
+  > th {
+    @apply bg-yellow-200;
+  }
+}
+
+.table-danger,
+.table-danger > th,
+.table-danger > td {
+  @apply bg-red-100;
+}
+
+.table-hover .table-danger:hover {
+  @apply bg-red-200;
+  
+  > td,
+  > th {
+    @apply bg-red-200;
+  }
+}
+
+.table-light,
+.table-light > th,
+.table-light > td {
+  @apply bg-gray-50;
+}
+
+.table-hover .table-light:hover {
+  @apply bg-gray-100;
+  
+  > td,
+  > th {
+    @apply bg-gray-100;
+  }
+}
+
+.table-dark,
+.table-dark > th,
+.table-dark > td {
+  @apply bg-gray-800;
+}
+
+.table-hover .table-dark:hover {
+  @apply bg-gray-700;
+  
+  > td,
+  > th {
+    @apply bg-gray-700;
+  }
+}
+
+.table-active,
+.table-active > th,
+.table-active > td {
+  @apply bg-gray-100;
+}
+
+.table-hover .table-active:hover {
+  @apply bg-gray-200;
+  
+  > td,
+  > th {
+    @apply bg-gray-200;
+  }
+}
+
+// Dark styles
+.table-dark {
+  @apply text-gray-300 bg-gray-800;
+  
+  th,
+  td,
+  thead th {
+    @apply border-gray-700;
+  }
+  
+  &.table-bordered {
+    @apply border-0;
+  }
+  
+  &.table-striped {
+    tbody tr:nth-of-type(odd) {
+      @apply bg-gray-700;
+    }
+  }
+  
+  &.table-hover {
+    tbody tr {
+      &:hover {
+        @apply bg-gray-600;
+      }
+    }
+  }
+}
+
+// Responsive tables
+.table-responsive {
+  @apply block w-full overflow-x-auto;
+  -webkit-overflow-scrolling: touch;
+  
+  > .table-bordered {
+    @apply border-0;
+  }
+}
+
+// Generate responsive classes for each breakpoint
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $next: breakpoint-next($breakpoint, $grid-breakpoints);
+  $infix: breakpoint-infix($next, $grid-breakpoints);
+  
+  .table-responsive#{$infix} {
+    @include media-breakpoint-down($breakpoint) {
+      @apply block w-full overflow-x-auto;
+      -webkit-overflow-scrolling: touch;
+      
+      > .table-bordered {
+        @apply border-0;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+// Media Object - Bootstrap 4 to Tailwind CSS
+
+.media {
+  @apply flex items-start;
+}
+
+.media-object {
+  @apply flex-shrink-0;
+}
+
+.media-body {
+  @apply flex-1;
+}

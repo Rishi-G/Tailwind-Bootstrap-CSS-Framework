@@ -1,0 +1,296 @@
+// Cards - Bootstrap 4 to Tailwind CSS
+
+.card {
+  @apply relative flex flex-col min-w-0 bg-white border border-gray-300 rounded;
+  
+  > hr {
+    @apply border-gray-300;
+  }
+  
+  > .list-group:first-child {
+    .list-group-item:first-child {
+      @apply rounded-t;
+    }
+  }
+  
+  > .list-group:last-child {
+    .list-group-item:last-child {
+      @apply rounded-b;
+    }
+  }
+}
+
+.card-body {
+  @apply flex-1 p-6;
+}
+
+.card-title {
+  @apply mb-3 text-lg font-semibold;
+}
+
+.card-subtitle {
+  @apply -mt-2 mb-0 text-gray-600;
+}
+
+.card-text:last-child {
+  @apply mb-0;
+}
+
+.card-link {
+  @apply text-blue-600;
+  
+  &:hover {
+    @apply text-blue-800;
+  }
+  
+  + .card-link {
+    @apply ml-6;
+  }
+}
+
+// Card header and footer
+.card-header {
+  @apply px-6 py-3 mb-0 bg-gray-50 border-b border-gray-300 rounded-t;
+  
+  &:first-child {
+    @apply rounded-t;
+  }
+  
+  + .list-group {
+    .list-group-item:first-child {
+      @apply border-t-0;
+    }
+  }
+}
+
+.card-footer {
+  @apply px-6 py-3 bg-gray-50 border-t border-gray-300 rounded-b;
+}
+
+// Card image caps
+.card-img-top {
+  @apply w-full rounded-t;
+}
+
+.card-img-bottom {
+  @apply w-full rounded-b;
+}
+
+.card-img {
+  @apply w-full rounded;
+}
+
+// Card image overlays
+.card-img-overlay {
+  @apply absolute inset-0 p-6;
+}
+
+// Card groups
+.card-group {
+  @apply flex flex-col;
+  
+  > .card {
+    @apply mb-4;
+  }
+  
+  @screen sm {
+    @apply flex-row;
+    
+    > .card {
+      @apply flex-1 mb-0;
+      
+      + .card {
+        @apply ml-0 border-l-0;
+      }
+      
+      &:not(:last-child) {
+        @apply rounded-r-none;
+        
+        .card-img-top,
+        .card-header {
+          @apply rounded-tr-none;
+        }
+        
+        .card-img-bottom,
+        .card-footer {
+          @apply rounded-br-none;
+        }
+      }
+      
+      &:not(:first-child) {
+        @apply rounded-l-none;
+        
+        .card-img-top,
+        .card-header {
+          @apply rounded-tl-none;
+        }
+        
+        .card-img-bottom,
+        .card-footer {
+          @apply rounded-bl-none;
+        }
+      }
+    }
+  }
+}
+
+// Card deck
+.card-deck {
+  @apply flex flex-col;
+  
+  .card {
+    @apply mb-4;
+  }
+  
+  @screen sm {
+    @apply flex-row -mx-4;
+    
+    .card {
+      @apply flex-1 mb-0 mx-4;
+    }
+  }
+}
+
+// Card columns
+.card-columns {
+  .card {
+    @apply mb-3 w-full inline-block;
+  }
+  
+  @screen sm {
+    column-count: 3;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+    
+    .card {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+
+// Accordion
+.accordion {
+  > .card {
+    @apply overflow-hidden;
+    
+    &:not(:first-of-type) {
+      @apply rounded-t-none border-t-0;
+      
+      .card-header:first-child {
+        @apply rounded-t-none;
+      }
+    }
+    
+    &:not(:last-of-type) {
+      @apply rounded-b-none;
+    }
+  }
+}
+
+// Card variations
+.card-primary {
+  @apply bg-blue-600 border-blue-600;
+  
+  .card-header,
+  .card-footer {
+    @apply bg-blue-700 border-blue-700;
+  }
+}
+
+.card-secondary {
+  @apply bg-gray-600 border-gray-600;
+  
+  .card-header,
+  .card-footer {
+    @apply bg-gray-700 border-gray-700;
+  }
+}
+
+.card-success {
+  @apply bg-green-600 border-green-600;
+  
+  .card-header,
+  .card-footer {
+    @apply bg-green-700 border-green-700;
+  }
+}
+
+.card-info {
+  @apply bg-cyan-600 border-cyan-600;
+  
+  .card-header,
+  .card-footer {
+    @apply bg-cyan-700 border-cyan-700;
+  }
+}
+
+.card-warning {
+  @apply bg-yellow-500 border-yellow-500;
+  
+  .card-header,
+  .card-footer {
+    @apply bg-yellow-600 border-yellow-600;
+  }
+}
+
+.card-danger {
+  @apply bg-red-600 border-red-600;
+  
+  .card-header,
+  .card-footer {
+    @apply bg-red-700 border-red-700;
+  }
+}
+
+.card-light {
+  @apply bg-gray-100 border-gray-300;
+  
+  .card-header,
+  .card-footer {
+    @apply bg-gray-200 border-gray-300;
+  }
+}
+
+.card-dark {
+  @apply bg-gray-800 border-gray-800;
+  
+  .card-header,
+  .card-footer {
+    @apply bg-gray-900 border-gray-800;
+  }
+}
+
+// Outline card variations
+.card-outline-primary {
+  @apply bg-transparent border-blue-600;
+}
+
+.card-outline-secondary {
+  @apply bg-transparent border-gray-600;
+}
+
+.card-outline-success {
+  @apply bg-transparent border-green-600;
+}
+
+.card-outline-info {
+  @apply bg-transparent border-cyan-600;
+}
+
+.card-outline-warning {
+  @apply bg-transparent border-yellow-500;
+}
+
+.card-outline-danger {
+  @apply bg-transparent border-red-600;
+}
+
+.card-outline-light {
+  @apply bg-transparent border-gray-300;
+}
+
+.card-outline-dark {
+  @apply bg-transparent border-gray-800;
+}

@@ -1,0 +1,88 @@
+// Navigation - Bootstrap 4 to Tailwind CSS
+
+.nav {
+  @apply flex flex-wrap pl-0 mb-0 list-none;
+}
+
+.nav-link {
+  @apply block px-4 py-2 text-blue-600 no-underline;
+  
+  &:hover,
+  &:focus {
+    @apply text-blue-800 no-underline;
+  }
+  
+  // Disabled state
+  &.disabled {
+    @apply text-gray-600 pointer-events-none;
+  }
+}
+
+// Tabs
+.nav-tabs {
+  @apply border-b border-gray-300;
+  
+  .nav-item {
+    @apply mb-px;
+  }
+  
+  .nav-link {
+    @apply border border-transparent rounded-t;
+    
+    &:hover,
+    &:focus {
+      @apply border-gray-300 border-b-transparent;
+    }
+    
+    &.disabled {
+      @apply text-gray-600 bg-transparent border-transparent;
+    }
+  }
+  
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    @apply text-gray-700 bg-white border-gray-300 border-b-white;
+  }
+  
+  .dropdown-menu {
+    @apply mt-px rounded-t-none;
+  }
+}
+
+// Pills
+.nav-pills {
+  .nav-link {
+    @apply rounded;
+  }
+  
+  .nav-link.active,
+  .show > .nav-link {
+    @apply text-white bg-blue-600;
+  }
+}
+
+// Fill and justified
+.nav-fill {
+  > .nav-link,
+  .nav-item {
+    @apply flex-1 text-center;
+  }
+}
+
+.nav-justified {
+  > .nav-link,
+  .nav-item {
+    @apply flex-grow text-center;
+  }
+}
+
+// Tab content
+.tab-content {
+  > .tab-pane {
+    @apply hidden;
+  }
+  
+  > .active {
+    @apply block;
+  }
+}

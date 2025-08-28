@@ -1,0 +1,132 @@
+// Modals - Bootstrap 4 to Tailwind CSS
+
+.modal-open {
+  overflow: hidden;
+  
+  .modal {
+    @apply overflow-x-hidden overflow-y-auto;
+  }
+}
+
+.modal {
+  @apply fixed top-0 left-0 z-50 hidden w-full h-full overflow-hidden outline-none;
+}
+
+.modal-dialog {
+  @apply relative w-auto mx-4 my-6 pointer-events-none;
+  
+  .modal.fade & {
+    @apply transition-transform duration-300 ease-out;
+    transform: translate(0, -50px);
+  }
+  
+  .modal.show & {
+    transform: none;
+  }
+}
+
+.modal-dialog-scrollable {
+  @apply flex h-full;
+  
+  .modal-content {
+    @apply max-h-full overflow-hidden;
+  }
+  
+  .modal-header,
+  .modal-footer {
+    @apply flex-shrink-0;
+  }
+  
+  .modal-body {
+    @apply overflow-y-auto;
+  }
+}
+
+.modal-dialog-centered {
+  @apply flex items-center min-h-full;
+  
+  &::before {
+    @apply block h-full;
+    content: "";
+  }
+}
+
+.modal-content {
+  @apply relative flex flex-col w-full pointer-events-auto bg-white border border-gray-400 rounded-lg shadow-lg outline-none;
+}
+
+.modal-backdrop {
+  @apply fixed top-0 left-0 z-40 w-screen h-screen bg-black;
+  
+  &.fade {
+    @apply opacity-0;
+  }
+  
+  &.show {
+    @apply opacity-50;
+  }
+}
+
+.modal-header {
+  @apply flex items-start justify-between p-4 border-b border-gray-300 rounded-t-lg;
+  
+  .close {
+    @apply p-4 -mt-4 -mr-4 ml-auto bg-transparent border-0 appearance-none cursor-pointer;
+  }
+}
+
+.modal-title {
+  @apply mb-0 text-lg font-medium leading-normal;
+}
+
+.modal-body {
+  @apply relative flex-auto p-4;
+}
+
+.modal-footer {
+  @apply flex items-center justify-end p-4 border-t border-gray-300 rounded-b-lg;
+  
+  > .btn + .btn {
+    @apply ml-2;
+  }
+}
+
+// Scale up the modal
+@screen sm {
+  .modal-dialog {
+    @apply max-w-lg mx-auto my-8;
+  }
+  
+  .modal-dialog-scrollable {
+    @apply max-h-full;
+    
+    .modal-content {
+      @apply max-h-full;
+    }
+  }
+  
+  .modal-dialog-centered {
+    @apply min-h-full;
+    
+    &::before {
+      height: calc(100vh - 1rem);
+    }
+  }
+  
+  .modal-sm {
+    max-width: 300px;
+  }
+}
+
+@screen lg {
+  .modal-lg,
+  .modal-xl {
+    max-width: 800px;
+  }
+}
+
+@screen xl {
+  .modal-xl {
+    max-width: 1140px;
+  }
+}

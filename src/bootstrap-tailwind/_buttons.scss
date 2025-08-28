@@ -1,0 +1,362 @@
+// Buttons - Bootstrap 4 to Tailwind CSS
+
+// Base button class
+.btn {
+  @apply inline-block font-normal text-center no-underline align-middle cursor-pointer select-none border leading-normal;
+  @apply px-3 py-2 text-base rounded transition-colors duration-150;
+  
+  &:focus,
+  &.focus {
+    @apply outline-none ;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply opacity-65 cursor-not-allowed;
+  }
+  
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply shadow-inner;
+  }
+}
+
+// Button variants
+.btn-primary {
+  @apply bg-blue-600 border-blue-600 text-white;
+  
+  &:hover {
+    @apply bg-blue-700 border-blue-700;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply shadow-outline-blue;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply bg-blue-600 border-blue-600;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply bg-blue-800 border-blue-800;
+  }
+}
+
+.btn-secondary {
+  @apply bg-gray-600 border-gray-600 text-white;
+  
+  &:hover {
+    @apply bg-gray-700 border-gray-700;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply shadow-outline-gray;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply bg-gray-600 border-gray-600;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply bg-gray-800 border-gray-800;
+  }
+}
+
+.btn-success {
+  @apply bg-green-600 border-green-600 text-white;
+  
+  &:hover {
+    @apply bg-green-700 border-green-700;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply shadow-outline-green;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply bg-green-600 border-green-600;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply bg-green-800 border-green-800;
+  }
+}
+
+.btn-danger {
+  @apply bg-red-600 border-red-600 text-white;
+  
+  &:hover {
+    @apply bg-red-700 border-red-700;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply shadow-outline-red;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply bg-red-600 border-red-600;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply bg-red-800 border-red-800;
+  }
+}
+
+.btn-warning {
+  @apply bg-yellow-500 border-yellow-500 text-black;
+  
+  &:hover {
+    @apply bg-yellow-600 border-yellow-600;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply shadow-outline-yellow;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply bg-yellow-500 border-yellow-500;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply bg-yellow-700 border-yellow-700;
+  }
+}
+
+.btn-info {
+  @apply bg-cyan-600 border-cyan-600 text-white;
+  
+  &:hover {
+    @apply bg-cyan-700 border-cyan-700;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply shadow-outline-cyan;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply bg-cyan-600 border-cyan-600;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply bg-cyan-800 border-cyan-800;
+  }
+}
+
+.btn-light {
+  @apply bg-gray-100 border-gray-100 text-gray-900;
+  
+  &:hover {
+    @apply bg-gray-200 border-gray-200;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply shadow-outline-gray;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply bg-gray-100 border-gray-100;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply bg-gray-300 border-gray-300;
+  }
+}
+
+.btn-dark {
+  @apply bg-gray-800 border-gray-800 text-white;
+  
+  &:hover {
+    @apply bg-gray-900 border-gray-900;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply shadow-outline-gray;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply bg-gray-800 border-gray-800;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply bg-black border-black;
+  }
+}
+
+// Outline buttons
+.btn-outline-primary {
+  @apply bg-transparent border-blue-600 text-blue-600;
+  
+  &:hover {
+    @apply bg-blue-600 border-blue-600 text-white;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply shadow-outline-blue;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply text-blue-600 bg-transparent;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply bg-blue-600 border-blue-600 text-white;
+  }
+}
+
+.btn-outline-secondary {
+  @apply bg-transparent border-gray-600 text-gray-600;
+  
+  &:hover {
+    @apply bg-gray-600 border-gray-600 text-white;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply shadow-outline-gray;
+  }
+  
+  &.disabled,
+  &:disabled {
+    @apply text-gray-600 bg-transparent;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @apply bg-gray-600 border-gray-600 text-white;
+  }
+}
+
+// Button sizes
+.btn-lg {
+  @apply px-4 py-3 text-lg rounded-lg;
+}
+
+.btn-sm {
+  @apply px-2 py-1 text-sm rounded-sm;
+}
+
+// Block button
+.btn-block {
+  @apply block w-full;
+}
+
+// Button links
+.btn-link {
+  @apply font-normal text-blue-600 bg-transparent border-transparent;
+  
+  &:hover {
+    @apply text-blue-800 bg-transparent border-transparent no-underline;
+  }
+  
+  &:focus,
+  &.focus {
+    @apply text-blue-800 bg-transparent border-transparent shadow-none;
+  }
+  
+  &:disabled,
+  &.disabled {
+    @apply text-gray-600 pointer-events-none;
+  }
+}
+
+// Button groups
+.btn-group {
+  @apply inline-flex align-middle;
+  
+  > .btn {
+    @apply relative flex-1;
+    
+    &:hover {
+      @apply z-10;
+    }
+    
+    &:focus,
+    &:active,
+    &.active {
+      @apply z-10;
+    }
+  }
+  
+  > .btn:not(:first-child) {
+    @apply ml-px;
+  }
+  
+  > .btn:not(:last-child):not(.dropdown-toggle) {
+    @apply rounded-r-none;
+  }
+  
+  > .btn:not(:first-child) {
+    @apply rounded-l-none;
+  }
+}
+
+.btn-group-vertical {
+  @apply inline-flex flex-col items-start justify-center align-middle;
+  
+  > .btn {
+    @apply w-full;
+    
+    &:not(:first-child) {
+      @apply mt-px;
+    }
+    
+    &:not(:last-child):not(.dropdown-toggle) {
+      @apply rounded-b-none;
+    }
+    
+    &:not(:first-child) {
+      @apply rounded-t-none;
+    }
+  }
+}
+
+// Button toolbar
+.btn-toolbar {
+  @apply flex flex-wrap justify-start;
+  
+  .btn-group,
+  .input-group {
+    @apply w-auto;
+  }
+  
+  > .btn,
+  > .btn-group,
+  > .input-group {
+    @apply ml-2;
+    
+    &:first-child {
+      @apply ml-0;
+    }
+  }
+}

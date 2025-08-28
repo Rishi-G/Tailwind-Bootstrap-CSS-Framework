@@ -1,0 +1,214 @@
+// Grid System - Bootstrap 4 to Tailwind CSS
+
+.container {
+  @apply w-full px-4 mx-auto;
+  
+  @screen sm {
+    max-width: 540px;
+  }
+  
+  @screen md {
+    max-width: 720px;
+  }
+  
+  @screen lg {
+    max-width: 960px;
+  }
+  
+  @screen xl {
+    max-width: 1140px;
+  }
+}
+
+.container-fluid {
+  @apply w-full px-4 mx-auto;
+}
+
+.row {
+  @apply flex flex-wrap -mx-4;
+}
+
+.no-gutters {
+  @apply mx-0;
+  
+  > .col,
+  > [class*="col-"] {
+    @apply px-0;
+  }
+}
+
+// Column base
+.col {
+  @apply flex-1 px-4;
+}
+
+// Auto columns
+.col-auto {
+  @apply flex-none w-auto px-4;
+}
+
+// Responsive columns
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @apply px-4;
+    flex: 0 0 percentage($i / 12);
+    max-width: percentage($i / 12);
+  }
+}
+
+// Small columns
+@screen sm {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      @apply px-4;
+      flex: 0 0 percentage($i / 12);
+      max-width: percentage($i / 12);
+    }
+  }
+  
+  .col-sm {
+    @apply flex-1 px-4;
+  }
+  
+  .col-sm-auto {
+    @apply flex-none w-auto px-4;
+  }
+}
+
+// Medium columns
+@screen md {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      @apply px-4;
+      flex: 0 0 percentage($i / 12);
+      max-width: percentage($i / 12);
+    }
+  }
+  
+  .col-md {
+    @apply flex-1 px-4;
+  }
+  
+  .col-md-auto {
+    @apply flex-none w-auto px-4;
+  }
+}
+
+// Large columns
+@screen lg {
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      @apply px-4;
+      flex: 0 0 percentage($i / 12);
+      max-width: percentage($i / 12);
+    }
+  }
+  
+  .col-lg {
+    @apply flex-1 px-4;
+  }
+  
+  .col-lg-auto {
+    @apply flex-none w-auto px-4;
+  }
+}
+
+// Extra large columns
+@screen xl {
+  @for $i from 1 through 12 {
+    .col-xl-#{$i} {
+      @apply px-4;
+      flex: 0 0 percentage($i / 12);
+      max-width: percentage($i / 12);
+    }
+  }
+  
+  .col-xl {
+    @apply flex-1 px-4;
+  }
+  
+  .col-xl-auto {
+    @apply flex-none w-auto px-4;
+  }
+}
+
+// Offset classes
+@for $i from 0 through 11 {
+  .offset-#{$i} {
+    margin-left: percentage($i / 12);
+  }
+}
+
+@screen sm {
+  @for $i from 0 through 11 {
+    .offset-sm-#{$i} {
+      margin-left: percentage($i / 12);
+    }
+  }
+}
+
+@screen md {
+  @for $i from 0 through 11 {
+    .offset-md-#{$i} {
+      margin-left: percentage($i / 12);
+    }
+  }
+}
+
+@screen lg {
+  @for $i from 0 through 11 {
+    .offset-lg-#{$i} {
+      margin-left: percentage($i / 12);
+    }
+  }
+}
+
+@screen xl {
+  @for $i from 0 through 11 {
+    .offset-xl-#{$i} {
+      margin-left: percentage($i / 12);
+    }
+  }
+}
+
+// Justify content
+.justify-content-start {
+  @apply justify-start;
+}
+
+.justify-content-end {
+  @apply justify-end;
+}
+
+.justify-content-center {
+  @apply justify-center;
+}
+
+.justify-content-between {
+  @apply justify-between;
+}
+
+.justify-content-around {
+  @apply justify-around;
+}
+
+// Align items
+.align-items-start {
+  @apply items-start;
+}
+
+.align-items-end {
+  @apply items-end;
+}
+
+.align-items-center {
+  @apply items-center;
+}
+
+.align-items-baseline {
+  @apply items-baseline;
+}
+
+.align-items-stretch {
+  @apply items-stretch;
+}
