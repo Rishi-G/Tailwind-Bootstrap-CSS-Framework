@@ -334,7 +334,7 @@
 .border-danger { @apply border-red-600; }
 .border-light { @apply border-gray-300; }
 .border-dark { @apply border-gray-800; }
-.border-white { @apply border-white; }
+.border-white { @apply border-[#fff]; }
 
 .rounded { border-radius: 0.25rem; }
 .rounded-sm { border-radius: 0.125rem; }
