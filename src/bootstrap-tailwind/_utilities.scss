@@ -60,14 +60,14 @@
 }
 
 // Flexbox utilities
-.flex-row { @apply flex-row; }
+.flex-row { flex-direction: row; }
 .flex-column { @apply flex-col; }
-.flex-row-reverse { @apply flex-row-reverse; }
+.flex-row-reverse { flex-direction: row-reverse; }
 .flex-column-reverse { @apply flex-col-reverse; }
 
-.flex-wrap { @apply flex-wrap; }
-.flex-nowrap { @apply flex-nowrap; }
-.flex-wrap-reverse { @apply flex-wrap-reverse; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+.flex-wrap-reverse { flex-wrap: wrap-reverse; }
 
 .flex-fill { @apply flex-1; }
 .flex-grow-0 { @apply flex-grow-0; }
